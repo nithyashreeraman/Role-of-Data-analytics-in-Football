@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Project Modules</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-image: url('static/football.jpg'); 
+                background-size: cover;
+                background-position: center;
+            background-repeat: no-repeat; 
+
+            }
+    
+            .container {
+                text-align: center;
+                margin: 0 80px;
+                border: 2px solid #000000; 
+                padding: 20px; 
+                border-radius: 10px; 
+                flex: 1; 
+                background-color: #1daf38; 
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+                border: 1px solid rgba(0, 0, 0, 0.1); 
+                transition: background-color 0.3s ease; 
+        }
+        
+        .container:hover {
+            background-color: #0877bc; /* Change background color on hover */
+        }
+    
+            .container img {
+                max-width: 100px;
+                display: block;
+                margin: 0 auto 10px;
+            }
+    
+            .container a {
+                text-decoration: none;
+                color: #ffffff;
+                font-family: Impact;
+                display: block;
+            }
+        </style>
+    </head>
+<body>
+    <div class="container">
+        <img src="static/winner.png" alt="Winner Prediction">
+        <a href="#">Winner Prediction</a>
+    </div>
+    <div class="container">
+        <img src="static/Player.png" alt="Key Player Detection & Substitution">
+        <a href="#">Key Player Detection <br>&<br> Substitution</a>
+    </div>
+    <div class="container">
+        <img src="static/formation.png" alt="Optimal Formation">
+        <a href="static/Optimal Formation Detection.html">Optimal Formation</a>
+    </div>
+</body>
+</html>

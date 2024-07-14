@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimal Formation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <center><img src="{{ url_for('static', filename='bundesliga_logo.png') }}" alt="Bundesliga" style="width: 100px; height: auto;"></center>
+        <h1>Select Team from Bundesliga 22-23 Season</h1>
+        <form action="/get_formation" method="post">
+            <select name="team">
+                {% for team in teams %}
+                    <option value="{{ team }}">{{ team }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

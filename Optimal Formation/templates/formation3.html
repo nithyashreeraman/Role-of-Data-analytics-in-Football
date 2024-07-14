@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ team }} 21-22 Season Formation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <br><center><img src="{{ url_for('static', filename='Laliga_logo.png') }}" alt="Bundesliga" style="width: 100px; height: auto;"></center>
+        <h1>{{ team }} 21-22 Season Optimal Formation</h1>
+        <h2><p>The best formation that lead to the most points was {{ best_formation }}</p></h2>
+        <p>Select another team:</p>
+        <form action="/get_formation" method="post">
+            <select name="team">
+                {% for team_option in teams %}
+                    <option value="{{ team_option }}" {% if team_option == team %}selected{% endif %}>{{ team_option }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Submit">
+        </form>
+        <br>
+        <img src="data:image/png;base64,{{ plot_data }}" alt="Optimal Formation Pie Chart">
+        
+        <div class="key">
+            {% for label, color in key.items() %}
+                <div class="color-box" style="background-color:{{ color }}"></div>
+                <span>{{ label }}</span>
+            {% endfor %}
+        </div>
+        
+       
+    </div>
+</body>
+</html>
